@@ -214,7 +214,7 @@ module.exports = {
             );
 
             // Envoie l'embed avec la liste déroulante
-            await message.channel.send({ embeds: [embed], components: [row] });
+            await message.reply({ embeds: [embed], components: [row] });
 
         } catch (error) {
             console.error(error);

@@ -169,7 +169,7 @@ module.exports = {
                 .setTimestamp()
                 .setFooter({ text: 'Main Dev : igrek_zaide', iconURL: 'https://i.imghippo.com/files/Mb7151RSU.jpg' });
 
-            message.channel.send({ embeds: [embed], files: [attachment] });
+            message.reply({ embeds: [embed], files: [attachment] });
 
         } catch (err) {
             console.error(err);
