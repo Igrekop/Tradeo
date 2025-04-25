@@ -93,6 +93,18 @@ client.on(Events.InteractionCreate, async interaction => {
 
         // Envoie l'embed uniquement à la personne qui a cliqué
         await interaction.reply({ embeds: [embed], flags: MessageFlags.Ephemeral });
+    
+        const express = require('express');
+    const app = express();
+
+    app.get('/', (req, res) => {
+    res.send('Bot is running!');
+    });
+
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`);
+    });
     }
 });
 
