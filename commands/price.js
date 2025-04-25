@@ -84,7 +84,7 @@ const siteEmojis = {
     csmoneyTrade:    { id: '1365003295579574373',   name: 'csmoney' },
     skinbid:         { id: '1365003511401808134',        name: 'skinbid' },
     privateskins:    { id: '1365005833615704195',   name: 'privateskins' },
-    itradeskins:     { id: '1365005853077536859',    name: 'itrade' },
+    itrade:     { id: '1365005853077536859',    name: 'itrade' },
     avanmarket:      { id: '1365005874866946138',     name: 'avanmarket' },
   };
   
