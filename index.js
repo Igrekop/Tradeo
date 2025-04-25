@@ -94,19 +94,18 @@ client.on(Events.InteractionCreate, async interaction => {
         // Envoie l'embed uniquement à la personne qui a cliqué
         await interaction.reply({ embeds: [embed], flags: MessageFlags.Ephemeral });
     
-        const express = require('express');
-    const app = express();
-
+    const express = require('express')
+    const app = express()
+    const port = process.env.PORT || 4000 
+        
     app.get('/', (req, res) => {
-    res.send('Bot is running!');
-    });
-
-    const PORT = process.env.PORT || 3000;
-    app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
-    });
-    }
-});
+    res.send('Hello World!')
+    })
+        
+    app.listen(port, () => {
+        console.log(`Example app listening on port ${port}`)
+    })
+}});
 
 // Log in to Discord with your client's token
 client.login(token);
