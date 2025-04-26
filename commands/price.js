@@ -12,35 +12,40 @@ function capitalizeWords(str) {
 
 // 🔧 Nettoyage du nom du skin
 function normalizeSkinName(name) {
-  const wearMap = {
-      'fn': 'Factory New',
-      'mw': 'Minimal Wear',
-      'ft': 'Field-Tested',
-      'bs': 'Battle-Scarred',
-      'ww': 'Well-Worn',
-      'factorynew': 'Factory New',
-      'minimalwear': 'Minimal Wear',
-      'fieldtested': 'Field-Tested',
-      'battlescarred': 'Battle-Scarred',
-      'wellworn': 'Well-Worn',
-      'factory-new': 'Factory New',
-      'minimal-wear': 'Minimal Wear',
-      'field-tested': 'Field-Tested',
-      'battle-scarred': 'Battle-Scarred',
-      'well-worn': 'Well-Worn',
-  };
+    const wearMap = {
+        'fn': 'Factory New',
+        'mw': 'Minimal Wear',
+        'ft': 'Field-Tested',
+        'bs': 'Battle-Scarred',
+        'ww': 'Well-Worn',
+        'factorynew': 'Factory New',
+        'minimalwear': 'Minimal Wear',
+        'fieldtested': 'Field-Tested',
+        'battlescarred': 'Battle-Scarred',
+        'wellworn': 'Well-Worn',
+        'factory-new': 'Factory New',
+        'minimal-wear': 'Minimal Wear',
+        'field-tested': 'Field-Tested',
+        'battle-scarred': 'Battle-Scarred',
+        'well-worn': 'Well-Worn',
+    };
 
-  return name
-      .replace(/\((fn|mw|ft|bs|ww|factorynew|minimalwear|fieldtested|battlescarred|wellworn|factory-new|minimal-wear|field-tested|battle-scarred|well-worn)\)/i, (_, short) => `(${wearMap[short.toLowerCase()]})`)
-      .replace(/\b(factory new|minimal wear|field-tested|battle-scarred|well-worn)\b/gi, match =>
-          match
-              .toLowerCase()
-              .replace(/\./g, '')
-              .split('-')
-              .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-              .join('-')
-              .replace(/\b\w/g, c => c.toUpperCase())
-      );
+    // Ajouter l'étoile pour les couteaux si elle est absente
+    if (/knife|dagger|bayonet|karambit|m9|talon|shadow|butterfly|huntsman|falchion|bowie|paracord|stiletto|ursus|navaja|classic|skeleton/i.test(name) && !name.startsWith('★')) {
+        name = `★ ${name}`;
+    }
+
+    return name
+        .replace(/\((fn|mw|ft|bs|ww|factorynew|minimalwear|fieldtested|battlescarred|wellworn|factory-new|minimal-wear|field-tested|battle-scarred|well-worn)\)/i, (_, short) => `(${wearMap[short.toLowerCase()]})`)
+        .replace(/\b(factory new|minimal wear|field-tested|battle-scarred|well-worn)\b/gi, match =>
+            match
+                .toLowerCase()
+                .replace(/\./g, '')
+                .split('-')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join('-')
+                .replace(/\b\w/g, c => c.toUpperCase())
+        );
 }
 
 // price.js (en haut du fichier)
@@ -86,8 +91,8 @@ const siteEmojis = {
     privateskins:    { id: '1365005833615704195',   name: 'privateskins' },
     itrade:     { id: '1365005853077536859',    name: 'itrade' },
     avanmarket:      { id: '1365005874866946138',     name: 'avanmarket' },
-  };
-  
+};
+
 
 
 // 📦 Récupération de l'image depuis Steam

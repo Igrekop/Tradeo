@@ -5,6 +5,12 @@ function normalizeSkinName(name) {
     fn: 'Factory New', mw: 'Minimal Wear', ft: 'Field-Tested',
     bs: 'Battle-Scarred', ww: 'Well-Worn',
   };
+
+  // Ajouter l'étoile pour les couteaux si elle est absente
+  if (/knife|dagger|bayonet|karambit|m9|talon|shadow|butterfly|huntsman|falchion|bowie|paracord|stiletto|ursus|navaja|classic|skeleton/i.test(name) && !name.startsWith('★')) {
+    name = `★ ${name}`;
+  }
+
   return name.replace(/\b(fn|mw|ft|bs|ww)\b/gi, m => wearMap[m.toLowerCase()] || m);
 }
 
