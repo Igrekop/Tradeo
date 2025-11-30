@@ -45,7 +45,7 @@
 <!-- ABOUT THE PROJECT -->
 ## À propos du projet
 
-Tradeo est un bot Discord développé pour aider les joueurs à suivre les quantités et prix des skins CS2 sur différentes marketplaces. Il permet également d'afficher des graphiques et des images de skins directement dans Discord.
+Tradeo est un bot Discord développé pour aider les joueurs à suivre les quantités et prix des skins CS2 sur différents marketplaces. Il permet également d'afficher des graphiques et des images de skins directement dans Discord.
 
 ### Construit avec
 
