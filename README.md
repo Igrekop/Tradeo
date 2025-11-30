@@ -1,4 +1,7 @@
 <h3 align="center">Tradeo</h3>
+<div align="center">
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/37d560ae-d35e-40d9-a5a6-4e64c0dfba96" />
+</div>
 
 <p align="center">
   Tradeo est un bot Discord permettant de visualiser les quantités et prix de skins CS2 sur plusieurs marketplaces, avec intégration graphique et images.
